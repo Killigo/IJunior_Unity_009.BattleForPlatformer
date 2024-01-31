@@ -135,7 +135,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -756,7 +756,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10090,7 +10090,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10102,7 +10102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449557271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.71, y: -5.85, z: 0}
+  m_LocalPosition: {x: 15.72, y: -5.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13083,7 +13083,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13114,7 +13114,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13126,7 +13126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056441784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.27, y: -5.85, z: 0}
+  m_LocalPosition: {x: 24.26, y: -5.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13308,7 +13308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518830461977124117, guid: e94bcdb79c4d9e04494ad58942108f05, type: 3}
       propertyPath: m_Name
-      value: EnemyBear
+      value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 3117239944361696064, guid: e94bcdb79c4d9e04494ad58942108f05, type: 3}
       propertyPath: _path
@@ -13373,7 +13373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3442782243479706591, guid: 6386730100322cd4c896d8497604b4ca, type: 3}
       propertyPath: m_Name
-      value: EnemyBat
+      value: Bat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6386730100322cd4c896d8497604b4ca, type: 3}
