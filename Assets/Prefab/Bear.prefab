@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 669020104}
   - component: {fileID: 669020105}
   - component: {fileID: 669020106}
-  - component: {fileID: 460573572}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -73,7 +72,11 @@ MonoBehaviour:
   _speed: 3
   _damageArea: {fileID: 669020105}
   _attackArea: {fileID: 669020104}
-  _lookArea: {fileID: 460573572}
+  _player: {fileID: 0}
+  _viewAngle: 70
+  _viewDistance: 10
+  _viewPointOffsetX: 0
+  _viewPointOffsetY: 2
 --- !u!70 &669020104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,19 +161,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &460573572
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518830461977124117}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.94, y: 0.68}
-  serializedVersion: 2
-  m_Radius: 0.9

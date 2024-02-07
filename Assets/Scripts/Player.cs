@@ -12,47 +12,39 @@ public class Player : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _spriteRenderer;
 
     private int _stateHash = Animator.StringToHash("State");
-    private bool _isGrounded;
-    private float _directionZero = 0.0f;
     private float _radius = 0.3f;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-    }
-
-    private void FixedUpdate()
-    {
-        InspectionGround();
     }
 
     private void Update()
     {
         _animator.SetInteger(_stateHash, 0);
 
-        if (!_isGrounded)
+        if (!InspectionGround())
             _animator.SetInteger(_stateHash, 2);
 
         if (Input.GetButton(Horizontal))
             Run();
 
-        if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (InspectionGround() && Input.GetKeyDown(KeyCode.Space))
             Jump();
     }
 
     private void Run()
     {
-        if (_isGrounded)
+        int direction = (Input.GetAxis(Horizontal) > 0) ? 0 : 180;
+
+        if (InspectionGround())
             _animator.SetInteger(_stateHash, 1);
 
-        Vector3 direction = transform.right * Input.GetAxis(Horizontal);
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, _speed * Time.deltaTime);
-        _spriteRenderer.flipX = direction.x < _directionZero;
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(Input.GetAxis(Horizontal), 0, 0), _speed * Time.deltaTime);
+        transform.rotation = Quaternion.AngleAxis(direction, Vector2.up);
     }
 
     private void Jump()
@@ -61,9 +53,9 @@ public class Player : MonoBehaviour
         _rigidbody.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
     }
 
-    private void InspectionGround()
+    private bool InspectionGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radius);
-        _isGrounded = colliders.Length > 1;
+        return colliders.Length > 1;
     }
 }
