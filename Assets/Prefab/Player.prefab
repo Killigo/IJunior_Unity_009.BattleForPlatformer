@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100942858707457659}
   - component: {fileID: 1100942858707457658}
+  - component: {fileID: 5880666724682176710}
   - component: {fileID: 1100942858707457661}
   - component: {fileID: 1100942858707457656}
   - component: {fileID: 1100942858707457660}
@@ -50,6 +51,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _jumpForce: 10
+--- !u!114 &5880666724682176710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100942858707457655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ebdf9be31df6e41a76a6aa9df73d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _damage: 5
 --- !u!70 &1100942858707457661
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

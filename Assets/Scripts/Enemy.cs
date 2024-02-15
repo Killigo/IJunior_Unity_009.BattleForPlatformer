@@ -1,19 +1,22 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform _path;
-    [SerializeField] private Collider2D _damageArea;
+    [SerializeField] private Collider2D _takeDamageArea;
     [SerializeField] private Collider2D _attackArea;
     [SerializeField] private Player _player;
+
     [SerializeField, Range(0, 360)] private float _viewAngle = 70f;
     [SerializeField] private float _viewDistance = 10f;
     [SerializeField] private float _viewPointOffsetX;
     [SerializeField] private float _viewPointOffsetY;
 
     [SerializeField] private float _speed = 3f;
-    [SerializeField] private float _health;
-    [SerializeField] private float _damage;
+    [SerializeField] private float _health = 100f;
+    [SerializeField] private float _damage = 1f;
 
     private Transform[] _wayPoints;
     private Transform _target;
@@ -40,10 +43,17 @@ public class Enemy : MonoBehaviour
             _target = _wayPoints[_currentPoint];
 
         Move(_target);
-        //Slide(_target, Vector2.up);
 
         if (transform.position == _target.position)
             _currentPoint = (_currentPoint + 1) % _wayPoints.Length;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent(typeof(PlayerHealth)))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(_damage);
+        }
     }
 
     protected void Move(Transform target)
@@ -54,30 +64,21 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(direction, Vector2.up);
     }
 
-    //void Slide(Transform target, Vector3 railDirection)
-    //{
-    //    Vector3 heading = target.position - transform.position;
-    //    Vector3 force = Vector3.Project(heading, railDirection);
-
-    //    transform.Translate(force);
-    //}
-
-    protected void TakeDamage(float damage)
+    private void TakeDamage(float damage)
     {
         if (damage < _health)
         {
             if (damage < 0)
+            {
                 damage = 0;
+            }
 
             _health -= damage;
         }
         else
+        {
             Die();
-    }
-
-    protected float Attack()
-    {
-        return _damage;
+        }
     }
 
     private void Die()
@@ -100,7 +101,7 @@ public class Enemy : MonoBehaviour
             isView = true;
         }
 
-        if(name == "Bear") Debug.Log($"{name}, {realAngle}");
+        //if(name == "Bear") Debug.Log($"{name}, {realAngle}");
 
         DrawViewState(viewPoint, rayColor);
 

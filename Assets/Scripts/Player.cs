@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private const string Horizontal = "Horizontal";
 
     [SerializeField] private float _speed = 3f;
-    [SerializeField] private float _jumpForce = 5f;
+    [SerializeField] private float _jumpForce = 10f;
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;

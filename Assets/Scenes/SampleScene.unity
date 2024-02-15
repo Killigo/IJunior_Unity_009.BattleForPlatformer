@@ -13310,10 +13310,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 828690317}
-    - target: {fileID: 3117239944361696064, guid: e94bcdb79c4d9e04494ad58942108f05, type: 3}
-      propertyPath: _viewAngle
-      value: 70
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94bcdb79c4d9e04494ad58942108f05, type: 3}
 --- !u!1001 &3442782242711400222
