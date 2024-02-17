@@ -7,9 +7,9 @@ public class EnemyAttackArea : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent(typeof(PlayerHealth)))
+        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(_damage);
+            health.TakeDamage(_damage);
         }
     }
 }

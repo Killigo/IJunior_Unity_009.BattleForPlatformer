@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform _path;
     [SerializeField] private Player _player;
     [SerializeField] private float _speed = 3f;
+    [SerializeField] private bool isFly = false;
 
     private Transform[] _wayPoints;
     private Transform _target;
@@ -38,9 +39,13 @@ public class Enemy : MonoBehaviour
 
     private void Move(Transform target)
     {
+        Vector2 walkPosition = new Vector2();
+
         direction = (target.position.x - transform.position.x > 0) ? 0 : 180;
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
+        walkPosition = (isFly) ? target.position : new Vector2(target.position.x, transform.position.y);
+
+        transform.position = Vector2.MoveTowards(transform.position, walkPosition, _speed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(direction, Vector2.up);
     }
 }

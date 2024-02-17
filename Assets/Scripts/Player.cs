@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -9,12 +10,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] private LayerMask _ground;
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
+    private PlayerHealth health;
 
     private int _stateHash = Animator.StringToHash("State");
-    private float _radius = 0.3f;
+    private float _radius = 0.15f;
 
     private void Start()
     {
@@ -55,7 +58,6 @@ public class Player : MonoBehaviour
 
     private bool InspectionGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radius);
-        return colliders.Length > 1;
+        return Physics2D.OverlapCircle(transform.position, _radius, _ground);
     }
 }
