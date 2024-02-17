@@ -39,11 +39,9 @@ public class Enemy : MonoBehaviour
 
     private void Move(Transform target)
     {
-        Vector2 walkPosition = new Vector2();
-
         direction = (target.position.x - transform.position.x > 0) ? 0 : 180;
 
-        walkPosition = (isFly) ? target.position : new Vector2(target.position.x, transform.position.y);
+        Vector2 walkPosition = (isFly) ? target.position : new Vector2(target.position.x, transform.position.y);
 
         transform.position = Vector2.MoveTowards(transform.position, walkPosition, _speed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(direction, Vector2.up);
