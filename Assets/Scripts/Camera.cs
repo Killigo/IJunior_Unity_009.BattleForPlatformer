@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerController _player;
 
     private Vector3 _position;
     private float _zCameraPosition = -10f;

@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aae896ab86896c4baff92a08b7cc0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 3117239944361696064}
 --- !u!1 &1518830461977124117
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +72,10 @@ GameObject:
   - component: {fileID: 1518830461977124116}
   - component: {fileID: 1518830461977124123}
   - component: {fileID: 3117239944361696064}
-  - component: {fileID: 646017857373017565}
+  - component: {fileID: 2407955580051121610}
+  - component: {fileID: 3519272618749547304}
+  - component: {fileID: 1408570696358987496}
+  - component: {fileID: 3691723769389503230}
   - component: {fileID: 669020106}
   m_Layer: 7
   m_Name: Bear
@@ -131,12 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e80507dff8797419318360c614358a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _path: {fileID: 0}
   _player: {fileID: 0}
-  _speed: 3
-  isFly: 0
-  IsAttack: 0
---- !u!114 &646017857373017565
+  _isFly: 0
+--- !u!114 &2407955580051121610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,11 +144,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518830461977124117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 928770d72e1a3354fab12712b62e4207, type: 3}
+  m_Script: {fileID: 11500000, guid: ed747a411db64bc46afbcf4ff3ce3923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+--- !u!114 &3519272618749547304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518830461977124117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ebdf9be31df6e41a76a6aa9df73d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 25
+--- !u!114 &1408570696358987496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518830461977124117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb5600bec435d94491d81fcee6d3ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _damage: 5
+--- !u!114 &3691723769389503230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518830461977124117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad65e6b1bf9eee49b75eaf4441a6252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
 --- !u!212 &669020106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -196,7 +233,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.54, y: 0.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -263,5 +300,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18e809dc6ab54f4b89871773b213274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 3117239944361696064}
-  _damage: 1

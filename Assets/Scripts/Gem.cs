@@ -15,7 +15,7 @@ public class Gem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Player>(out Player player))
+        if (collision.GetComponent<PlayerController>())
         {
             _animator.SetBool(_collectHash, true);
             Destroy(gameObject, _delay);
