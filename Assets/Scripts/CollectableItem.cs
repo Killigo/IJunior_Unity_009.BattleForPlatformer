@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 
-public class Gem : MonoBehaviour
+public class CollectableItem : MonoBehaviour
 {
     private Animator _animator;
     private float _delay = 0.4f;

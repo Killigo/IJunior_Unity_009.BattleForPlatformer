@@ -15,16 +15,22 @@ public class CharacterHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (damage < 0)
-            damage = 0;
+        if (damage > 0)
+            _currentHealth = Mathf.Clamp(_currentHealth - damage, _minHealth, _maxHealth);
 
-        _currentHealth = Mathf.Clamp(_currentHealth - damage, _minHealth, _maxHealth);
-
-        if (_currentHealth <= 0)
+        if (_currentHealth == _minHealth)
         {
             Die();
             return;
         }
+
+        Debug.Log($"{name} {_currentHealth}");
+    }
+
+    public void Heal(float heal)
+    {
+        if (heal > 0)
+            _currentHealth = Mathf.Clamp(_currentHealth + heal, _minHealth, _maxHealth);
 
         Debug.Log($"{name} {_currentHealth}");
     }

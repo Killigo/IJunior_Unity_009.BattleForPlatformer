@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GemSpawner : MonoBehaviour
+public class CherrySpawner : MonoBehaviour
 {
     [SerializeField] private CollectableItem _prefab;
 
@@ -10,9 +10,8 @@ public class GemSpawner : MonoBehaviour
     {
         _points = GetComponentsInChildren<Transform>();
 
-        for (int i = 1; i < _points.Length; i++)
-        {
-            Instantiate(_prefab, _points[i].transform.position, _points[i].transform.rotation);
-        }
+        var random = Random.Range(1, _points.Length);
+
+        Instantiate(_prefab, _points[random].transform.position, _points[random].transform.rotation);
     }
 }
