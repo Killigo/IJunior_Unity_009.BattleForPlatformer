@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -7,10 +8,12 @@ public class CharacterHealth : MonoBehaviour
     private float _minHealth = 0f;
     private float _currentHealth;
 
+    public UnityAction<float, float> HealthChanged;
+
     private void Start()
     {
         _currentHealth = _maxHealth;
-        Debug.Log($"{name} {_currentHealth}");
+        HealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 
     public void TakeDamage(float damage)
@@ -24,7 +27,7 @@ public class CharacterHealth : MonoBehaviour
             return;
         }
 
-        Debug.Log($"{name} {_currentHealth}");
+        HealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 
     public void Heal(float heal)
@@ -32,12 +35,12 @@ public class CharacterHealth : MonoBehaviour
         if (heal > 0)
             _currentHealth = Mathf.Clamp(_currentHealth + heal, _minHealth, _maxHealth);
 
-        Debug.Log($"{name} {_currentHealth}");
+        HealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 
     private void Die()
     {
-        Debug.Log($"{name} погибает.");
-        Destroy(gameObject);
+        HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        gameObject.SetActive(false);
     }
 }
