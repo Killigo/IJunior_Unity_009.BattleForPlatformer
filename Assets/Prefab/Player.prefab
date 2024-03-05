@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2078865603248664828}
   - component: {fileID: 6746886613761471}
   - component: {fileID: 7698687199084803907}
+  - component: {fileID: 6185440706793778297}
   - component: {fileID: 1100942858707457661}
   - component: {fileID: 1100942858707457656}
   - component: {fileID: 1100942858707457660}
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100942858707457655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed747a411db64bc46afbcf4ff3ce3923, type: 3}
   m_Name: 
@@ -120,6 +121,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
+--- !u!114 &6185440706793778297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100942858707457655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19325b7da8e10d4b86a6cfb433a3703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferRadius: 5
+  _abilityDuration: 6
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _transferRatePerSeconds: 5
+  _abilityKey: 102
 --- !u!70 &1100942858707457661
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
